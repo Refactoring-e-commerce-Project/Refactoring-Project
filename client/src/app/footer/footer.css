@@ -1,0 +1,14 @@
+.image{
+    width: 200px;
+}
+.footes{
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    background-color:black ;
+   position: static;
+  
+}
+.ex{
+    margin-left: 20px;
+}
