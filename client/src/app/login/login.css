@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.sign__page {
+  margin-bottom: 50px;
+}

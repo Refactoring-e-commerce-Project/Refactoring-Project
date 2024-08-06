@@ -1,7 +1,48 @@
-'use client'
+"use client";
+import axios from "axios";
+import { ChangeEvent, FC, useState } from "react";
+import "./login.css";
+import { useRouter } from "next/navigation";
 
-import './login.css'
-function SignUp() {
+const Login: FC = () => {
+  // function components
+  const [mail, setmail] = useState<string>("");
+  const [password, setapassword] = useState<string>("");
+  const router = useRouter();
+
+  const handlelog = (): void => {
+    // function without return (void)
+    const user = { mail: mail, password: password };
+    axios
+      .post("http://127.0.0.1:3000/users/login", user)
+      .then((response) => {
+        console.log(response);
+        console.log("success");
+        if (mail === "admin@gmail.com") {
+          router.push("/admin");
+          console.log("aaaa");
+
+          localStorage.setItem("token", response.data.token);
+          console.log(localStorage);
+        }
+        console.log(response.data);
+        if (response.data.user.type === "client") {
+          // line 23 user not users
+          localStorage.setItem("token", response.data.token);
+          // navigate
+          router.push("/");
+          console.log("ccccc");
+        } else {
+          localStorage.setItem("token", response.data.token);
+          // navigate to seller page
+          router.push("/seller");
+          console.log("sssss");
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
   return (
     <div className="w-full  flex items-center justify-center gap-16 bg-white">
@@ -18,23 +59,27 @@ function SignUp() {
         <input
           placeholder="Email or phone number"
           className="w-70 h-70 border-b-2 border-grey outline-none"
-         
+          onChange={(e: ChangeEvent<HTMLInputElement>) => {
+            setmail(e.target.value);
+          }}
         />
         <input
           type="password"
           placeholder="Password"
           className="w-70 h-70 border-b-2 border-grey outline-none"
-         
+          onChange={(e: ChangeEvent<HTMLInputElement>) => {
+            setapassword(e.target.value);
+          }}
         />
         <button
           className="bg-red-600 text-white text-base p-2"
-        
+          onClick={handlelog}
         >
           Log in
         </button>
       </div>
     </div>
   );
-}
+};
 
-export default SignUp;
+export default Login;

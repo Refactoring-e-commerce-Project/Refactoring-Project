@@ -1,6 +1,15 @@
-'use client'
+"use client";
+
+import Login from "./login/page";
+import SignUp from "./sign/page";
+
 function page() {
-  return <div>home page </div>;
+  return (
+    <div>
+      <Login />
+      <SignUp />
+    </div>
+  );
 }
 
 export default page;
