@@ -58,6 +58,10 @@ const Product = sequelize.define(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    description: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     images: {
       type: DataTypes.JSON, // Store an array of image URLs or paths
       allowNull: true,
@@ -233,7 +237,7 @@ sequelize
   .catch((err) => console.error("Database connection error:", err));
 
 sequelize
-  .sync()
+  .sync({ alter: true })
   .then(() => {
     console.log("Database and tables created");
     createAdminUser(); // Call function to create the admin user
@@ -283,40 +287,3 @@ module.exports = {
   Wishlist,
   Category,
 };
-
-// const { Sequelize } = require('sequelize');
-
-// // Create a Sequelize instance
-// const sequelize = new Sequelize('commerce', 'fourat', 'Liverpool1892', {
-//   host: 'localhost',
-//   dialect: 'mysql',
-// });
-
-// const User = require('../models/usermodel')
-// const Product = require('../models/productmodel')
-// const Cart = require('../models/cartmodel')
-// const Wishlist = require('../models/wishlistmodel')
-// const categories = require('../models/categoriesmodel')
-
-// User.hasMany(Product, { foreignKey: 'userId' });
-// User.hasMany(Wishlist, { foreignKey: 'userId' });
-// User.hasMany(Cart, { foreignKey: 'userId' });
-
-// Product.belongsTo(User, { foreignKey: 'userId' });
-// Product.hasMany(Cart, { foreignKey: 'productId' });
-// Product.hasMany(Wishlist, { foreignKey: 'productId' });
-
-// Cart.belongsTo(User, { foreignKey: 'userId' });
-// Cart.belongsTo(Product, { foreignKey: 'productId' });
-
-// Wishlist.belongsTo(User, { foreignKey: 'userId' });
-// Wishlist.belongsTo(Product, { foreignKey: 'productId' });
-
-// sequelize.authenticate()
-// .then(()=>{console.log('connected successfully')})
-// .catch((err)=>{console.log(err);})
-
-// sequelize.sync().then(()=>{console.log('database and tables created')})
-// .catch((err)=>{console.log(err)})
-
-// module.exports = sequelize;

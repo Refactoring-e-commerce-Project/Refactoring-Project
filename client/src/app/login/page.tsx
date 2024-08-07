@@ -1,15 +1,21 @@
 "use client";
 import axios from "axios";
-import { ChangeEvent, FC, useState } from "react";
+import { ChangeEvent, FC, useEffect, useState } from "react";
 import "./login.css";
 import { useRouter } from "next/navigation";
-
+// const user =  {
+//   ProdName: string,
+//   price: number
+// },[]
 const Login: FC = () => {
   // function components
   const [mail, setmail] = useState<string>("");
   const [password, setapassword] = useState<string>("");
   const router = useRouter();
-
+useEffect(()=>{
+  alert('hello')
+  
+},[])
   const handlelog = (): void => {
     // function without return (void)
     const user = { mail: mail, password: password };
@@ -31,12 +37,11 @@ const Login: FC = () => {
           localStorage.setItem("token", response.data.token);
           // navigate
           router.push("/");
-          console.log("ccccc");
+       
         } else {
           localStorage.setItem("token", response.data.token);
           // navigate to seller page
-          router.push("/seller");
-          console.log("sssss");
+       
         }
       })
       .catch((err) => {

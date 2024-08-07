@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { ChangeEvent, useState } from "react";
 import "./sign.css";
 import axios from "axios";
 import { useRouter } from "next/navigation";
@@ -63,7 +63,7 @@ function SignUp() {
         <input
           placeholder="Email or phone number"
           className="w-70 h-70 border-b-2 border-grey outline-none"
-          onChange={(e) => {
+          onChange={(e:ChangeEvent<HTMLInputElement>) => {
             setmail(e.target.value);
           }}
         />
@@ -78,7 +78,7 @@ function SignUp() {
         <input
           placeholder="Password"
           className="w-70 h-70 border-b-2 border-grey outline-none"
-          onChange={(e) => {
+          onChange={(e: ChangeEvent<HTMLInputElement>) => {
             setapassword(e.target.value);
           }}
         />
