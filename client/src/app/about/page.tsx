@@ -1,6 +1,8 @@
 'use client'
 import React from 'react';
 import './about.css';
+import Image from 'next/image';
+
 
 import { FaShippingFast, FaHeadset, FaMoneyCheckAlt } from 'react-icons/fa';
 import { IoMdPeople, IoMdCart, IoMdStats, IoMdPricetag } from 'react-icons/io';
@@ -41,7 +43,13 @@ const About = () => {
 
       </div>
       <div className="big-story">
-        <img src='{img}' alt="story-big" />
+        {/* <img src='{img}' alt="story-big" /> */}
+        <Image
+                            src="/assets/ImageAbout.webp"
+                            alt="our story "
+                            width={900}
+                            height={600}
+                        />
       </div>
     </div>
 
