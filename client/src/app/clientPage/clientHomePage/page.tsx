@@ -13,19 +13,11 @@ import {
   faFootballBall,
   faTshirt,
 } from "@fortawesome/free-solid-svg-icons";
-import Exclusive from "../exclusive/page";
-import "./home.css";
-import FlashSales from "../flashSlaes/page";
+import Exclusive from "../exlusive2/page";
+import "./clientHomePage.css";
+import FlashSales from "../flashSales2/page"
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-// import { log } from "console";
-
-// interface Category {
-//   id: number;
-//   categoryName: string;
-//   createdAt: string;
-//   updatedAt: string;
-// }
 
 interface Product {
   id: number;
@@ -161,7 +153,6 @@ function Home() {
 
       <div className="Home__container">
         {products.slice(0, visibleCount).map((product, index) => (
-          // link place
           <div key={index} className="second__sales__container">
             <div className="icon__sales ">
               <div className="image__pourcentage__sales">
@@ -186,7 +177,6 @@ function Home() {
               <button className="btn__home">Add to Cart</button>
             </div>
           </div>
-          // End link
         ))}
       </div>
       {products.length > visibleCount && (

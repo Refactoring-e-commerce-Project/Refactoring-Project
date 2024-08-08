@@ -11,11 +11,10 @@ const Login: FC = () => {
   // function components
   const [mail, setmail] = useState<string>("");
   const [password, setapassword] = useState<string>("");
-  const router = useRouter();
-useEffect(()=>{
-  alert('hello')
-  
-},[])
+  const router = useRouter(); 
+  useEffect(() => {
+   
+  }, []);
   const handlelog = (): void => {
     // function without return (void)
     const user = { mail: mail, password: password };
@@ -27,6 +26,7 @@ useEffect(()=>{
         if (mail === "admin@gmail.com") {
           router.push("/admin");
           console.log("aaaa");
+          localStorage.setItem("user", JSON.stringify(response.data.user));
 
           localStorage.setItem("token", response.data.token);
           console.log(localStorage);
@@ -35,13 +35,13 @@ useEffect(()=>{
         if (response.data.user.type === "client") {
           // line 23 user not users
           localStorage.setItem("token", response.data.token);
+          localStorage.setItem("user", JSON.stringify(response.data.user));
           // navigate
           router.push("/");
-       
         } else {
           localStorage.setItem("token", response.data.token);
+          localStorage.setItem("user", JSON.stringify(response.data.user));
           // navigate to seller page
-       
         }
       })
       .catch((err) => {
