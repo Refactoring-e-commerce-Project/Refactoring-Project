@@ -36,7 +36,11 @@ function Hero() {
         <FontAwesomeIcon className="fa-heart" icon={faHeart} />
         <FontAwesomeIcon className="fa-shopping-cart" icon={faShoppingCart} style={{ fontSize: "16px", color: "black" }} />
         {/* <div className="user__icon">
+<<<<<<< HEAD
           <FontAwesomeIcon className="icon__user__hero" icon={faUser} />
+=======
+          <FontAwesomeIcon className="icon__user__hero" icon={faUser} /> // icon user 
+>>>>>>> 1678ad5fdfa07383c1635e3610675430cdb21238
         </div> */}
       </div>
     </div>

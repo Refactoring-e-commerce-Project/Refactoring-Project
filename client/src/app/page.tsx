@@ -1,12 +1,19 @@
-'use client'
-import "./style/global.css";
+"use client";
+import Home from "./homePage/page";
 
-// import { useEffect } from "react";
+// import FlashSales from "./flashSlaes/page";
+
+// import Login from "./login/page";
+// import SignUp from "./sign/page";
 
 function page() {
   return (
-  <div>home page </div>
-)
+    <div>
+      {/* <Login />
+      <SignUp /> */}
+      <Home />
+    </div>
+  );
 }
 
 export default page;
