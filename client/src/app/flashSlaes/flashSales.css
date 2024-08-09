@@ -1,0 +1,145 @@
+/* .icon__container {
+  display: flex;
+  flex-direction: column;
+}
+
+.icon__sales {
+  position: relative;
+}
+
+.img__sales {
+  margin-left: 50px;
+  width: 50px;
+} */
+
+.flash__sales__container {
+  margin-top: 250px;
+  display: flex;
+  flex-direction: column;
+}
+
+.header__sales {
+  display: flex;
+  align-items: center;
+  margin-left: 60px;
+  gap: 25px;
+  margin-bottom: 30px;
+}
+.timer__sales {
+  margin-bottom: 40px;
+}
+.red_mark__sales {
+  background-color: #db4444;
+  width: 30px;
+  height: 50px;
+}
+
+.today__sales {
+  font-size: 20px;
+  color: #db4444;
+}
+.timer__sales {
+  display: flex;
+  gap: 30px;
+  margin-left: 60px;
+  align-items: center;
+  font-weight: bold;
+}
+.Date__sales {
+  font-size: 20px;
+}
+.flash__sales {
+  font-size: 32px;
+}
+
+.img__sales {
+  width: 200px;
+  height: auto;
+  margin-top: 25px;
+  /* margin-left: 200px; */
+}
+.icon__sales {
+  display: flex;
+  flex-direction: column;
+  /* display: inline-block; */
+  width: auto;
+  margin-top: 50px;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  /* background-color; */
+}
+
+.icons {
+  display: flex;
+  flex-direction: column;
+  color: rgb(209, 204, 204);
+  /* margin-left: 0px; */
+  gap: 15px;
+
+  /* display: inline-block; */
+}
+.poucentage__sales {
+  background-color: #db4444;
+
+  color: white;
+  width: 50px;
+  height: 30px;
+  align-content: center;
+  text-align: center;
+}
+.image__pourcentage__sales {
+  display: flex;
+
+  gap: 20px;
+}
+.second__sales__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.grey__star {
+  filter: grayscale(100%);
+}
+.detail__sales {
+  display: flex;
+  flex-direction: column;
+  align-items: star;
+  justify-content: center;
+  gap: 10px;
+}
+.allStars {
+  display: flex;
+}
+.HAVIT__sales {
+  font-weight: bold;
+}
+.price__details {
+  font-weight: bold;
+  color: #db4444;
+}
+.all__products__sales {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 45px;
+}
+
+.btn__sales {
+  background-color: #db4444;
+  width: 200px;
+  height: 50px;
+  margin-left: 700px;
+  margin-top: 60px;
+  color: white;
+}
+.btn__showMore {
+  background-color: #db4444;
+  margin-top: 40px;
+  margin-left: 750px;
+  color: white;
+  padding: 15px 10px;
+  width: 160px;
+}

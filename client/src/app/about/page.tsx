@@ -1,6 +1,8 @@
 'use client'
 import React from 'react';
 import './about.css';
+import Image from 'next/image';
+
 
 import { FaShippingFast, FaHeadset, FaMoneyCheckAlt } from 'react-icons/fa';
 import { IoMdPeople, IoMdCart, IoMdStats, IoMdPricetag } from 'react-icons/io';
@@ -28,7 +30,7 @@ const About = () => {
          
 <div className='paragraph'>
   <p>
-    Launched in 2015, Exclusive is South Asia’s premier online shopping marketplace with an active presence in Bangladesh. Supported by a wide range of tailored marketing, data, and service solutions, Exclusive has 10,500 sellers and 300 brands and serves 3 million customers across the region.
+    Launched in 2015, Exclusive is South Asia's premier online shopping marketplace with an active presence in Bangladesh. Supported by a wide range of tailored marketing, data, and service solutions, Exclusive has 10,500 sellers and 300 brands and serves 3 million customers across the region.
   </p>
   <p className="extra-space">
     Exclusive has more than 1 million products to offer, growing at a very fast rate. Exclusive offers a diverse assortment in categories ranging from consumer.
@@ -41,7 +43,13 @@ const About = () => {
 
       </div>
       <div className="big-story">
-        <img src='{img}' alt="story-big" />
+        {/* <img src='{img}' alt="story-big" /> */}
+        <Image
+                            src="/assets/ImageAbout.webp"
+                            alt="our story "
+                            width={900}
+                            height={600}
+                        />
       </div>
     </div>
 
