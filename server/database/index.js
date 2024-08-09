@@ -4,7 +4,7 @@ const bcrypt = require("bcrypt");
 
 // Create a Sequelize instance
 
-const sequelize = new Sequelize("commerce", "root", "root", {
+const sequelize = new Sequelize("commerce", "fourat", "Liverpool1892", {
   host: "localhost",
   dialect: "mysql",
 });
@@ -140,6 +140,14 @@ const Cart = sequelize.define(
         model: "products",
         key: "id",
       },
+    },
+    image:{
+      type:DataTypes.STRING,
+      allowNull : false,
+    },
+    price:{
+      type:DataTypes.INTEGER,
+      allowNull:false
     },
     quantity: {
       type: DataTypes.INTEGER,

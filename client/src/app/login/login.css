@@ -2,12 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-<<<<<<< HEAD
 .sign__page{
     margin-bottom: 50px;
 }
-=======
-.sign__page {
-  margin-bottom: 50px;
-}
->>>>>>> 1678ad5fdfa07383c1635e3610675430cdb21238

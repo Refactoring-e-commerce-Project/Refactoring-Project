@@ -1,3 +1,4 @@
+
 "use client";
 
 import "./footer.css";
@@ -13,11 +14,6 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { faCopyright } from "@fortawesome/free-solid-svg-icons/faCopyright";
 
-// import {
-//   faInstagram,
-//   faFacebook,
-//   faTwitter,
-// } from "@fortawesome/free-brands-svg-icons";
 
 function Footer() {
   return (
