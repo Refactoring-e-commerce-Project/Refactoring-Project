@@ -1,9 +1,8 @@
 "use client";
 import React, { useEffect, useState } from "react";
-// import { getAllProduct } from "../services/productService";
-// import Exclusive from "./Exclusive";
+
 import axios from "axios";
-// import { useNavigate } from "react-router-dom";
+
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
@@ -18,68 +17,41 @@ import "./home.css";
 import FlashSales from "../flashSlaes/page";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-// import { log } from "console";
 
-// interface Category {
-//   id: number;
-//   categoryName: string;
-//   createdAt: string;
-//   updatedAt: string;
-// }
 
 interface Product {
   id: number;
   productname: string;
   images: string[];
-  description: string; // Assuming description might not be present
+  description: string; 
   price: number;
   availability: Boolean;
   userId: number;
   categoryId: number;
   createdAt: string;
   updatedAt: string;
-  Category: number; // Assuming category is nested
+  Category: number; 
 }
 
 function Home() {
   const [products, setProducts] = useState<Product[]>([]);
   const [visibleCount, setVisibleCount] = useState<number>(6);
   const [ref, setref] = useState<Boolean>(false);
+  
   const router = useRouter();
 
-  // console.log("prod", products);
-
-  // const getAllProduct = async () => {
-  //   axios
-  //     .get<Product[]>("http://localhost:3000/products/getAll")
-  //     .then((res) => {
-  //       console.log(res);
-  //       return res.data;
-  //     })
-  //     .catch((err) => {
-  //       console.error(err);
-  //       throw err;
-  //     });
-  // };
-  // const navigate = useNavigate();
-  // useEffect(()=>{
-  // console.log('hi');
-
-  //  alert('hello')
-  // console.log("ahi", products);
+ 
   useEffect(() => {
     axios
       .get("http://localhost:3000/products/getAll")
       .then((res) => {
         console.log("hhhh5", res);
         setProducts(res.data);
-        // console.log("ahi", products);
-        // return res.data;
-        // console.log("this is", products);
+      
       })
       .catch((err) => {
         console.error(err);
-        // throw err;
+      
       });
   }, []);
 
@@ -88,8 +60,9 @@ function Home() {
   };
 
   const handleClickElec = () => {
-    // navigate("/electronics");
-    router.push("/");
+   
+    router.push("/electronics");
+  
   };
   const handleClickBeauty = () => {
     // navigate("/Beauty");

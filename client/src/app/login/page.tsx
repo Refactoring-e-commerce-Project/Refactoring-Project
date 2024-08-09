@@ -8,7 +8,7 @@ import { useRouter } from "next/navigation";
 //   price: number
 // },[]
 const Login: FC = () => {
-  // function components
+
   const [mail, setmail] = useState<string>("");
   const [password, setapassword] = useState<string>("");
   const router = useRouter(); 
