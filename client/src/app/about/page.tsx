@@ -43,9 +43,6 @@ const About = () => {
 
       </div>
       <div className="big-story">
-<<<<<<< HEAD
-        <img src='{img}' alt="story-big" />
-=======
         {/* <img src='{img}' alt="story-big" /> */}
         <Image
                             src="/assets/ImageAbout.webp"
@@ -53,7 +50,6 @@ const About = () => {
                             width={900}
                             height={600}
                         />
->>>>>>> 811a2262568a6338e3699fc7d6be891ed62235d2
       </div>
     </div>
 
