@@ -16,22 +16,15 @@ catch (error) {
 
 const addToCart = async (req, res)=>{
   try {
-<<<<<<< HEAD
-      const {userId, productId, quantity,totalPrice }= req.body
-=======
       const {userId, productId,image,price, quantity,totalPrice }= req.body
->>>>>>> 811a2262568a6338e3699fc7d6be891ed62235d2
       
     
       const newcart= await Cart.create({
         
           userId,
           productId,
-<<<<<<< HEAD
-=======
           image,
           price,
->>>>>>> 811a2262568a6338e3699fc7d6be891ed62235d2
           quantity,
           totalPrice
   
@@ -79,21 +72,6 @@ const deleteCart = async (req, res) => {
 
 const getOneCart = async (req, res) => {
   try {
-<<<<<<< HEAD
-    const id = req.params.id
-
- 
-    const cart = await Cart.findOne({
-      where: { userId },
-      include: {
-        model: Cart,
-        include: {
-          model: Product,
-        },
-      },
-    })
-
-=======
     // Retrieve the userId from the request parameters
     const { id } = req.params;
     
@@ -108,29 +86,10 @@ const getOneCart = async (req, res) => {
     });
 
     // Check if the cart exists
->>>>>>> 811a2262568a6338e3699fc7d6be891ed62235d2
     if (!cart) {
       return res.status(404).json({ message: "Cart not found" });
     }
 
-<<<<<<< HEAD
-    const cartItems = cart.cartitems || []
-
-  
-    const response = cartItems.map(cartItem => ({
-      id: cartItem.id,
-      userId:cartItem.userId,
-      productId: cartItem.productId,
-      quantity: cartItem.quantity,
-      totalPrice: cartItem.totalPrice, 
-
-    }));
-
-    res.status(200).json(response);
-  } catch (error) {
-    console.error("Error fetching cart items:", error)
-    res.status(500).json({ error: "Error fetching cart items" })
-=======
     
     res.status(200).json(cart);
   } catch (error) {
@@ -165,16 +124,9 @@ const getOneCartByProdId = async (req, res) => {
     // Log the error and send a 500 status code
     console.error("Error fetching cart items:", error);
     res.status(500).json({ error: "Error fetching cart items" });
->>>>>>> 811a2262568a6338e3699fc7d6be891ed62235d2
   }
 }
 
 
 
-<<<<<<< HEAD
-
-
-module.exports={getAllcart,deleteCart,updateCart,addToCart,getOneCart}
-=======
 module.exports={getAllcart,deleteCart,updateCart,addToCart,getOneCart,getOneCartByProdId}
->>>>>>> 811a2262568a6338e3699fc7d6be891ed62235d2

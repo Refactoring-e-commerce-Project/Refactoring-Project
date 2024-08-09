@@ -13,7 +13,7 @@ const Seller = () => {
   const [userId, setUserId] = useState<number>(0) ;
   const [categories, setCategories] = useState<any[]>([]);
 
-  /////////////////////////////
+  //////////////////////////////////////////////
   const convertBase64 = (file:any) => {
     return new Promise((resolve, reject) => {
       const fileReader = new FileReader();
@@ -143,7 +143,7 @@ const addProduct = async (e: React.FormEvent<HTMLFormElement>) => {
       description,
       price,
       categoryId,
-      userId:Number(2),
+      userId:Number(6),
       images
     });
 
