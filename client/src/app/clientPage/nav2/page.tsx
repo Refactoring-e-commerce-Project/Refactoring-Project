@@ -10,11 +10,14 @@ function NavBar() {
   const router = useRouter();
 
 
-  const handleLogout = () => {
-    localStorage.removeItem("token");
-    localStorage.removeItem("user");
-    router.push("/login");
-  };
+//   const handleLogout = () => {
+//     // localStorage.removeItem("token");
+//     // localStorage.removeItem("user");
+//     // Clears all items in localStorage
+// localStorage.clear();
+
+//     router.push("/login");
+//   };
   return (
     <div>
       <div className="navbar__container">
@@ -22,7 +25,7 @@ function NavBar() {
           Summer Sales for all Swim Suits and Free Express Delivery-off 50%!
         </span>
         <p className="navbar__shopnow">shopNow</p>
-        <button onClick={handleLogout}>Sign out</button>
+        {/* <button onClick={handleLogout}>Sign out</button> */}
         <p className="navbar__langage">English</p>
         {/* user Name */}
 

@@ -141,6 +141,14 @@ const Cart = sequelize.define(
         key: "id",
       },
     },
+    image:{
+      type:DataTypes.STRING,
+      allowNull : false,
+    },
+    price:{
+      type:DataTypes.INTEGER,
+      allowNull:false
+    },
     quantity: {
       type: DataTypes.INTEGER,
       allowNull: false,

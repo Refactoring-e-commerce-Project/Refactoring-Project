@@ -18,6 +18,7 @@ import "./clientHomePage.css";
 import FlashSales from "../flashSales2/page"
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import Link from "next/link"
 
 interface Product {
   id: number;
@@ -39,39 +40,16 @@ function Home() {
   const [ref, setref] = useState<Boolean>(false);
   const router = useRouter();
 
-  // console.log("prod", products);
-
-  // const getAllProduct = async () => {
-  //   axios
-  //     .get<Product[]>("http://localhost:3000/products/getAll")
-  //     .then((res) => {
-  //       console.log(res);
-  //       return res.data;
-  //     })
-  //     .catch((err) => {
-  //       console.error(err);
-  //       throw err;
-  //     });
-  // };
-  // const navigate = useNavigate();
-  // useEffect(()=>{
-  // console.log('hi');
-
-  //  alert('hello')
-  // console.log("ahi", products);
+ 
   useEffect(() => {
     axios
       .get("http://localhost:3000/products/getAll")
       .then((res) => {
         console.log("hhhh5", res);
         setProducts(res.data);
-        // console.log("ahi", products);
-        // return res.data;
-        // console.log("this is", products);
       })
       .catch((err) => {
         console.error(err);
-        // throw err;
       });
   }, []);
 
@@ -89,10 +67,41 @@ function Home() {
   const handleClickSports = () => {
     // navigate("/sports");
   };
-  const handleClickMode = () => {
+  
+  
+ 
+  
+
+const handleClickMode = () => {
     // navigate("/mode");
   };
 
+  // const  id : number =  JSON.parse(localStorage.getItem("user")).id 
+  const id: number = JSON.parse(localStorage.getItem("user") || '{}').id;
+
+  console.log(id);
+  
+ 
+  const handleclickproduct = (imageUrl: string, price: number,prodid : number, quantity: number) => {
+    const newCart = {
+      userId: id,
+      productId: prodid,
+      image: imageUrl,
+      quantity: quantity,
+      price: price,
+      totalPrice: price * quantity
+    };
+
+    axios.post('http://localhost:3000/carts/add', newCart)
+      .then(() => {
+        console.log('Cart added successfully');
+      })
+      .catch((err) => {
+        console.error('Error adding cart:', err);
+      });
+  };
+  
+ 
   return (
     <div>
       <div>
@@ -153,6 +162,7 @@ function Home() {
 
       <div className="Home__container">
         {products.slice(0, visibleCount).map((product, index) => (
+          <Link href={`/clientPage/clientHomePage/${product.id}`}>
           <div key={index} className="second__sales__container">
             <div className="icon__sales ">
               <div className="image__pourcentage__sales">
@@ -174,9 +184,10 @@ function Home() {
                 <span className="star">⭐⭐⭐⭐</span>
                 <p className="grey__star">⭐</p>
               </div>
-              <button className="btn__home">Add to Cart</button>
+              <button className="btn__home" onClick={() => handleclickproduct(product.images[0], product.price,product.id, 1)} >Add to Cart</button>
             </div>
           </div>
+          </Link>
         ))}
       </div>
       {products.length > visibleCount && (

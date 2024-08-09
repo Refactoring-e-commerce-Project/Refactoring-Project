@@ -5,6 +5,7 @@
       "dom.iterable",
       "esnext"
     ],
+  
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -32,7 +33,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts"
-, "src/app/contact/page.jsx"  ],
+, "src/app/contact/page.jsx", "src/AdminDash/src/app/tables/table/page.tsx"  ],
   "exclude": [
     "node_modules"
   ]

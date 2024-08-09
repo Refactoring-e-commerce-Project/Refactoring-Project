@@ -42,7 +42,10 @@ const FlashSales = () => {
       </div>
       <div className="timer__sales  ">
         <h3 className="flash__sales">Flash Sales</h3>
-        <p className="Date__sales">{formatDateTime(currentDateTime)}</p>
+        <p className="Date__sales" suppressHydrationWarning> 
+          {/* to take of the hydration error */}
+          {formatDateTime(currentDateTime)}
+        </p>
       </div>
       {/* first product*/}
       <div className="all__products__sales">
@@ -50,7 +53,10 @@ const FlashSales = () => {
           <div className="icon__sales ">
             <div className="image__pourcentage__sales">
               <div className="poucentage__sales">-40%</div>
-              <img className="img__sales" src="https://m.media-amazon.com/images/I/81vxWpPpgNL._AC_UF1000,1000_QL80_.jpg" />
+              <img
+                className="img__sales"
+                src="https://m.media-amazon.com/images/I/81vxWpPpgNL._AC_UF1000,1000_QL80_.jpg"
+              />
               <div className="icons">
                 <FontAwesomeIcon icon={faHeart} className=" icon__heart " />
                 {/* <i className="fas fa-eye "></i> */}
@@ -73,7 +79,10 @@ const FlashSales = () => {
           <div className="icon__sales ">
             <div className="image__pourcentage__sales">
               <div className="poucentage__sales">-40%</div>
-              <img className="img__sales" src="https://m.media-amazon.com/images/I/81vxWpPpgNL._AC_UF1000,1000_QL80_.jpg" />
+              <img
+                className="img__sales"
+                src="https://m.media-amazon.com/images/I/81vxWpPpgNL._AC_UF1000,1000_QL80_.jpg"
+              />
               <div className="icons">
                 <FontAwesomeIcon icon={faHeart} className=" icon__heart " />
 
@@ -95,7 +104,10 @@ const FlashSales = () => {
           <div className="icon__sales ">
             <div className="image__pourcentage__sales">
               <div className="poucentage__sales">-40%</div>
-              <img className="img__sales" src="https://m.media-amazon.com/images/I/81vxWpPpgNL._AC_UF1000,1000_QL80_.jpg" />
+              <img
+                className="img__sales"
+                src="https://m.media-amazon.com/images/I/81vxWpPpgNL._AC_UF1000,1000_QL80_.jpg"
+              />
               <div className="icons">
                 <FontAwesomeIcon icon={faHeart} className=" icon__heart " />
 
@@ -117,7 +129,10 @@ const FlashSales = () => {
           <div className="icon__sales ">
             <div className="image__pourcentage__sales">
               <div className="poucentage__sales">-40%</div>
-              <img className="img__sales" src="https://m.media-amazon.com/images/I/81vxWpPpgNL._AC_UF1000,1000_QL80_.jpg" />
+              <img
+                className="img__sales"
+                src="https://m.media-amazon.com/images/I/81vxWpPpgNL._AC_UF1000,1000_QL80_.jpg"
+              />
               <div className="icons">
                 <FontAwesomeIcon icon={faHeart} className=" icon__heart " />
 

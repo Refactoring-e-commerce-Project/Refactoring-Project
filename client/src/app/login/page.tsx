@@ -9,7 +9,7 @@ import Link from "next/link";
 //   price: number
 // },[]
 const Login: FC = () => {
-  // function components
+
   const [mail, setmail] = useState<string>("");
   const [password, setapassword] = useState<string>("");
   const [rolle,setrole]=useState<string>('')
@@ -29,8 +29,8 @@ const Login: FC = () => {
           // router.push("/admin");
           console.log("aaaa");
           localStorage.setItem("user", JSON.stringify(response.data.user));
-
           localStorage.setItem("token", response.data.token);
+          localStorage.setItem("userid",response.data.id)
           console.log(localStorage);
         }
         console.log(response.data);
@@ -42,7 +42,7 @@ const Login: FC = () => {
           localStorage.setItem("token", response.data.token);
           localStorage.setItem("user", JSON.stringify(response.data.user));
           // navigate
-          // router.push("/");
+          router.push("/clientPage/clientHomePage");
         } else {
           localStorage.setItem("token", response.data.token);
           localStorage.setItem("user", JSON.stringify(response.data.user));

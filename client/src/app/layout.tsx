@@ -18,7 +18,6 @@ const Mainlayout = ({ children }: MainlayoutProps) => {
         {children}
         {/* <Footer/> */}
       </body>
-      {/* < Footer/> */}
     </html>
   );
 };

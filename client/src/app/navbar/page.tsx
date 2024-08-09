@@ -8,22 +8,22 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 
 function NavBar() {
-  const [userNameLogged, setUserNameLogged] = useState<string>("");
-  const [ref, useRef] = useState<boolean>(false);
+  // const [userNameLogged, setUserNameLogged] = useState<string>("");
+  // const [ref, useRef] = useState<boolean>(false);
   const router = useRouter();
 
-  useEffect(() => {
-    if (localStorage.getItem("user")) {
-      const user = JSON.parse(localStorage.getItem("user")!);
-      setUserNameLogged(user.name);
-      console.log(user);
-    }
-  }, []);
-  const handleLogout = () => {
-    localStorage.removeItem("token");
-    localStorage.removeItem("user");
-    router.push("/login");
-  };
+  // useEffect(() => {
+  //   if (localStorage.getItem("user")) {
+  //     const user = JSON.parse(localStorage.getItem("user")!);
+  //     setUserNameLogged(user.name);
+  //     console.log(user);
+  //   }
+  // }, []);
+  // const handleLogout = () => {
+  //   localStorage.removeItem("token");
+  //   localStorage.removeItem("user");
+  //   router.push("/login");
+  // };
   return (
     <div>
       <div className="navbar__container">
@@ -31,11 +31,11 @@ function NavBar() {
           Summer Sales for all Swim Suits and Free Express Delivery-off 50%!
         </span>
         <p className="navbar__shopnow">shopNow</p>
-        <button onClick={handleLogout}>Sign out</button>
+        {/* <button onClick={handleLogout}>Sign out</button> */}
         <p className="navbar__langage">English</p>
         {/* user Name */}
 
-        <p className="navbar__langage">{userNameLogged}</p>
+        {/* <p className="navbar__langage">{userNameLogged}</p> */}
 
         <div style={{ fontSize: "12px", color: "white" }}>
           <FontAwesomeIcon icon={faChevronDown} />
