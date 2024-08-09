@@ -39,7 +39,8 @@ const productsRoutes = require("./router/productRouter");
 const cartRouter = require("./router/CartRouter");
 const wishlistRoutes = require("./router/wishlistrouter");
 
-const PORT = 3000;
+const PORT = 3000
+;
 const app = express();
 
 app.use(express.json());

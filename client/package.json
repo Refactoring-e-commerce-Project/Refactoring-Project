@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@fortawesome/fontawesome-free": "^6.6.0",
     "@fortawesome/fontawesome-svg-core": "^6.6.0",
     "@fortawesome/free-brands-svg-icons": "^6.6.0",
@@ -16,10 +17,14 @@
     "@fortawesome/react-fontawesome": "^0.2.2",
     "@types/swiper": "^6.0.0",
     "axios": "^1.7.3",
+    "chart.js": "^4.4.3",
     "next": "^14.2.5",
+    "nodemailer": "^6.9.14",
     "react": "^18.3.1",
+    "react-chartjs-2": "^5.2.0",
     "react-dom": "^18.3.1",
     "react-icons": "^5.2.1",
+    "sweetalert2": "^11.12.4",
     "swiper": "^11.1.9"
   },
   "devDependencies": {
