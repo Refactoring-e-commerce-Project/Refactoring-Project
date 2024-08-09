@@ -50,7 +50,7 @@ const Login: FC = () => {
   };
 
   return (
-    <div className="w-full  flex items-center justify-center gap-16 bg-white">
+    <div className="w-full  flex items-center justify-center gap-16 bg-white sign__page">
       {/* <div className="w-80 h-80 bg-red-600"></div> */}
       <img
         style={{ width: "600px", height: "450px" }}
