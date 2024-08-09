@@ -4,7 +4,11 @@ const bcrypt = require("bcrypt");
 
 // Create a Sequelize instance
 
+<<<<<<< HEAD
 const sequelize = new Sequelize("commerce", "root", "root", {
+=======
+const sequelize = new Sequelize("commerce", "fourat", "Liverpool1892", {
+>>>>>>> 811a2262568a6338e3699fc7d6be891ed62235d2
   host: "localhost",
   dialect: "mysql",
 });
@@ -141,6 +145,17 @@ const Cart = sequelize.define(
         key: "id",
       },
     },
+<<<<<<< HEAD
+=======
+    image:{
+      type:DataTypes.STRING,
+      allowNull : false,
+    },
+    price:{
+      type:DataTypes.INTEGER,
+      allowNull:false
+    },
+>>>>>>> 811a2262568a6338e3699fc7d6be891ed62235d2
     quantity: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -237,7 +252,11 @@ sequelize
   .catch((err) => console.error("Database connection error:", err));
 
 sequelize
+<<<<<<< HEAD
   .sync()
+=======
+  .sync({ alter: true })
+>>>>>>> 811a2262568a6338e3699fc7d6be891ed62235d2
   .then(() => {
     console.log("Database and tables created");
     createAdminUser(); // Call function to create the admin user
@@ -287,5 +306,8 @@ module.exports = {
   Wishlist,
   Category,
 };
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 811a2262568a6338e3699fc7d6be891ed62235d2

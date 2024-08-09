@@ -16,13 +16,22 @@ catch (error) {
 
 const addToCart = async (req, res)=>{
   try {
+<<<<<<< HEAD
       const {userId, productId, quantity,totalPrice }= req.body
+=======
+      const {userId, productId,image,price, quantity,totalPrice }= req.body
+>>>>>>> 811a2262568a6338e3699fc7d6be891ed62235d2
       
     
       const newcart= await Cart.create({
         
           userId,
           productId,
+<<<<<<< HEAD
+=======
+          image,
+          price,
+>>>>>>> 811a2262568a6338e3699fc7d6be891ed62235d2
           quantity,
           totalPrice
   
@@ -70,6 +79,7 @@ const deleteCart = async (req, res) => {
 
 const getOneCart = async (req, res) => {
   try {
+<<<<<<< HEAD
     const id = req.params.id
 
  
@@ -83,10 +93,27 @@ const getOneCart = async (req, res) => {
       },
     })
 
+=======
+    // Retrieve the userId from the request parameters
+    const { id } = req.params;
+    
+    // Ensure id is valid
+    if (!id) {
+      return res.status(400).json({ message: "User ID is required" });
+    }
+
+    // Find the cart associated with the userId
+    const cart = await Cart.findAll({
+      where: { userId: id }
+    });
+
+    // Check if the cart exists
+>>>>>>> 811a2262568a6338e3699fc7d6be891ed62235d2
     if (!cart) {
       return res.status(404).json({ message: "Cart not found" });
     }
 
+<<<<<<< HEAD
     const cartItems = cart.cartitems || []
 
   
@@ -103,11 +130,51 @@ const getOneCart = async (req, res) => {
   } catch (error) {
     console.error("Error fetching cart items:", error)
     res.status(500).json({ error: "Error fetching cart items" })
+=======
+    
+    res.status(200).json(cart);
+  } catch (error) {
+    // Log the error and send a 500 status code
+    console.error("Error fetching cart items:", error);
+    res.status(500).json({ error: "Error fetching cart items" });
+  }
+}
+const getOneCartByProdId = async (req, res) => {
+  try {
+    // Retrieve the userId from the request parameters
+    const { id } = req.params;
+    
+    // Ensure id is valid
+    if (!id) {
+      return res.status(400).json({ message: "User ID is required" });
+    }
+
+    // Find the cart associated with the userId
+    const cart = await Cart.findAll({
+      where: { productId: id }
+    });
+
+    // Check if the cart exists
+    if (!cart) {
+      return res.status(404).json({ message: "Cart not found" });
+    }
+
+    
+    res.status(200).json(cart);
+  } catch (error) {
+    // Log the error and send a 500 status code
+    console.error("Error fetching cart items:", error);
+    res.status(500).json({ error: "Error fetching cart items" });
+>>>>>>> 811a2262568a6338e3699fc7d6be891ed62235d2
   }
 }
 
 
 
+<<<<<<< HEAD
 
 
 module.exports={getAllcart,deleteCart,updateCart,addToCart,getOneCart}
+=======
+module.exports={getAllcart,deleteCart,updateCart,addToCart,getOneCart,getOneCartByProdId}
+>>>>>>> 811a2262568a6338e3699fc7d6be891ed62235d2

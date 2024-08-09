@@ -1,0 +1,253 @@
+
+  
+  .app {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+
+  }
+  .breadcrumb {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+  }
+  
+  .breadcrumb-link {
+    text-decoration: none;
+    color: black;
+  }
+  
+  .breadcrumb-separator {
+    margin: 0 5px;
+    color: black;
+  }
+  
+  .breadcrumb-current {
+    color: grey;
+  }
+     
+  
+ 
+  
+  
+  .our-story-container {
+    display: flex;
+    align-items: stretch;
+    margin-bottom: 40px;
+    
+  }
+  
+  .our-story {
+    flex: 1;
+    margin-right: 20px;
+    padding-top: 90px;
+  }
+  
+  .our-story h1 {
+    font-size: 4em;
+    margin-bottom: 20px;
+  }
+  
+  .paragraph p {
+    margin-bottom: 20px; /* Adjust the value as needed */
+  }
+  
+  .paragraph .extra-space {
+    margin-top: 20px; /* Adjust the value as needed */
+  }
+  
+
+
+
+
+
+  .big-story {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .big-story img {
+    width: 705px;
+    height: 609px;
+    top: 285px;
+    left: 705px;
+  }
+
+
+
+  .statistics-section {
+    display: flex;
+    justify-content: space-around;
+    margin: 40px 0;
+   top: 1074px;
+   gap: 30px;
+   padding: 20px;
+   
+  }
+  
+  .stat-item {
+    text-align: center;
+    flex: 1;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+  }
+  
+  .stat-item2 {
+    text-align: center;
+    flex: 1;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+  }
+ 
+  .stat-item3 {
+    text-align: center;
+    flex: 1;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+  }
+
+
+
+
+
+  .stat-item:hover {
+    background-color: #f9f9f9;
+  }
+  
+  .highlight {
+    background-color: #f44336;
+    color: white;
+  }
+  
+  .stat-icon {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+  }
+  
+  .stat-number {
+    font-size: 1.8em;
+    font-weight: bold;
+    margin: 10px 0;
+  }
+  
+  .stat-description {
+    font-size: 0.9em;
+    color: #666;
+  }
+  
+  .team {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 40px;
+  }
+  
+  .team-member {
+    text-align: center;
+  }
+  
+  .team-member img {
+    
+    width: 1,70px;
+    height: 364px;
+    top: 104px;
+    gap: 30px;
+  }
+  
+  .team-member h3 {
+    margin-top: 10px;
+    font-size: 1.2em;
+  }
+  
+
+
+
+  .social-media-icons {
+    display: flex;
+    justify-content: center; /* Center the icons */
+    gap: 10px;
+    margin-top: 10px; /* Add some spacing above the icons */
+  }
+  
+  .social-media-icons a {
+    color: #000; /* Default icon color */
+    font-size: 24px; /* Adjust icon size */
+    transition: color 0.3s; /* Smooth color transition */
+  }
+  
+  .social-media-icons a:hover {
+    color: #0077b5; /* Hover color for LinkedIn */
+  }
+  
+  .social-media-icons a:nth-child(1):hover {
+    color: #1da1f2; /* Hover color for Twitter */
+  }
+  
+  .social-media-icons a:nth-child(2):hover {
+    color: #e4405f; /* Hover color for Instagram */
+  }
+
+
+
+  .dots-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px; /* Adjust spacing as needed */
+  }
+  
+  .dot {
+    width: 15px; /* Adjust size as needed */
+    height: 15px; /* Adjust size as needed */
+    margin: 0 5px; /* Adjust spacing as needed */
+    background-color: #ccc; /* Default dot color */
+    border-radius: 50%;
+    transition: background-color 0.3s; /* Smooth transition for active state */
+  }
+  
+  .dot.active {
+    background-color: #f44336; /* Active dot color */
+  }
+ 
+
+
+
+
+
+
+  .features-section {
+    display: flex;
+    justify-content: space-around;
+    margin: 40px 0;
+  }
+  
+  .feature-item {
+    text-align: center;
+    flex: 1;
+    padding: 20px;
+  }
+  
+  .feature-icon {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: #000;
+  }
+  
+  .feature-title {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 10px 0;
+  }
+  
+  .feature-description {
+    font-size: 0.9em;
+    color: #666;
+  }
+  

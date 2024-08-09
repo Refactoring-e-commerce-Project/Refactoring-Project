@@ -1,5 +1,9 @@
 "use client";
+<<<<<<< HEAD
 import { useState } from "react";
+=======
+import { ChangeEvent, useState } from "react";
+>>>>>>> 811a2262568a6338e3699fc7d6be891ed62235d2
 import "./sign.css";
 import axios from "axios";
 import { useRouter } from "next/navigation";
@@ -63,7 +67,11 @@ function SignUp() {
         <input
           placeholder="Email or phone number"
           className="w-70 h-70 border-b-2 border-grey outline-none"
+<<<<<<< HEAD
           onChange={(e) => {
+=======
+          onChange={(e:ChangeEvent<HTMLInputElement>) => {
+>>>>>>> 811a2262568a6338e3699fc7d6be891ed62235d2
             setmail(e.target.value);
           }}
         />
@@ -78,7 +86,11 @@ function SignUp() {
         <input
           placeholder="Password"
           className="w-70 h-70 border-b-2 border-grey outline-none"
+<<<<<<< HEAD
           onChange={(e) => {
+=======
+          onChange={(e: ChangeEvent<HTMLInputElement>) => {
+>>>>>>> 811a2262568a6338e3699fc7d6be891ed62235d2
             setapassword(e.target.value);
           }}
         />

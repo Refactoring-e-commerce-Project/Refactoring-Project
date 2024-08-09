@@ -2,7 +2,13 @@ const { Product, Category } = require("../database/index");
 
 const getAllProducts = async (req, res) => {
   try {
+<<<<<<< HEAD
     const products = await Product.findAll({ include: Category });
+=======
+    // const products = await Product.findAll({ include: Category });
+    const products = await Product.findAll({});
+
+>>>>>>> 811a2262568a6338e3699fc7d6be891ed62235d2
     res.json(products);
   } catch (error) {
     console.error(error);
