@@ -12,7 +12,7 @@ const Mainlayout = ({ children }: MainlayoutProps) => {
       <body>
         <Navbar />
         {children}
-         {/* < Footer/> */}
+         < Footer/>
       </body>
     </html>
   );
