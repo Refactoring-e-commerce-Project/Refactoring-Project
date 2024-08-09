@@ -12,7 +12,6 @@ function page() {
       {/* <Login />
       <SignUp /> */}
       <Home />
-      lohjugtfzdefrgthyju,;l
     </div>
   );
 }
