@@ -156,7 +156,7 @@ const Cart = () => {
                 <div className="cart-header" style={{ boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)', borderRadius: '5px' }}>
                     <span>Product</span>
                     <span>Price</span>
-                    <span>Quantity</span>
+                    <span>Quantity test </span>
                     <span>Subtotal</span>
                 </div>
                 <hr />
