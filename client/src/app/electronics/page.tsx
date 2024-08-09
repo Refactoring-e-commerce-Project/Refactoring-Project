@@ -48,7 +48,7 @@ function Electronics() {
       <div className="header__seller__page" style={{ marginTop: "90px" }}>
         <div className="title__seller__page">
           <div className="red_mark__seller"></div>
-          <span className="space__seller">Beauty</span>
+          <span className="space__seller">Beauty test</span>
         </div>
         <div className="img__container">
           <img
