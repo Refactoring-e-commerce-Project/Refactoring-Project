@@ -1,5 +1,3 @@
-
-
 import React from "react";
 // import "./Exclusive.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

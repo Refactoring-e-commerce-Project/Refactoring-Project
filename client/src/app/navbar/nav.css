@@ -1,6 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+p {
+  font-family: 'Poppins', sans-serif; 
+}
+span {
+  font-family: 'Poppins', sans-serif; 
+}
 .navbar__container {
   display: flex;
   align-items: center;
