@@ -40,7 +40,8 @@ const cartRouter = require("./router/CartRouter");
 const wishlistRoutes = require("./router/wishlistrouter");
 const uploadImage = require("./cloudinayUpload");
 
-const PORT = 3000;
+const PORT = 3000
+;
 const app = express();
 
 

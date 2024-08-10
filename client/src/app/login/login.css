@@ -3,10 +3,15 @@
 @tailwind utilities;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 .sign__page {
   margin-bottom: 50px;
 =======
 .sign__page{
     margin-bottom: 50px;
 >>>>>>> 811a2262568a6338e3699fc7d6be891ed62235d2
+=======
+.sign__page {
+  margin-bottom: 50px;
+>>>>>>> 4bf89e32ce99039e76940f0c0b2f4c4764799706
 }

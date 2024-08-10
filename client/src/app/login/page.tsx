@@ -2,7 +2,8 @@
 import axios from "axios";
 import { ChangeEvent, FC, useEffect, useState } from "react";
 import "./login.css";
-import { useRouter } from "next/navigation";
+import { useRouter } from "next/navigation"
+import Link from "next/link";
 // const user =  {
 //   ProdName: string,
 //   price: number
@@ -11,6 +12,7 @@ const Login: FC = () => {
 
   const [mail, setmail] = useState<string>("");
   const [password, setapassword] = useState<string>("");
+  const [rolle,setrole]=useState<string>('')
   const router = useRouter(); 
   useEffect(() => {
    
@@ -21,10 +23,10 @@ const Login: FC = () => {
     axios
       .post("http://127.0.0.1:3000/users/login", user)
       .then((response) => {
-        console.log(response);
+        console.log(response.data);
         console.log("success");
-        if (mail === "admin@gmail.com") {
-          router.push("/admin");
+        if (mail === "admin@gmail.com") { 
+          // router.push("/admin");
           console.log("aaaa");
           localStorage.setItem("user", JSON.stringify(response.data.user));
           localStorage.setItem("token", response.data.token);
@@ -32,6 +34,9 @@ const Login: FC = () => {
           console.log(localStorage);
         }
         console.log(response.data);
+        if(response.data.user.type==="admin"){
+          open('http://localhost:3002/')
+        }
         if (response.data.user.type === "client") {
           // line 23 user not users
           localStorage.setItem("token", response.data.token);
@@ -47,7 +52,8 @@ const Login: FC = () => {
       .catch((err) => {
         console.log(err);
       });
-  };
+  }
+ 
 
   return (
     <div className="w-full  flex items-center justify-center gap-16 bg-white sign__page">
@@ -76,12 +82,15 @@ const Login: FC = () => {
             setapassword(e.target.value);
           }}
         />
-        <button
+     <button
           className="bg-red-600 text-white text-base p-2"
-          onClick={handlelog}
-        >
+        
+       
+       onClick={handlelog}> 
           Log in
         </button>
+       
+        
       </div>
     </div>
   );
