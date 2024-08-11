@@ -1,9 +1,32 @@
+<<<<<<< HEAD
+/* .image{
+    width: 200px;
+}
+.footes{
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    background-color:black ;
+   position: static;
+  
+}
+.ex{
+    margin-left: 20px;
+} */
+
+/* .footer__img {
+  width: 50px;
+  filter: grayscale(100%);
+} */
+.footer__container {
+=======
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
 span p h1 {
   font-family: "Poppins", sans-serif;
 }
 .footer__container {
   font-family: "poppins";
+>>>>>>> 811a2262568a6338e3699fc7d6be891ed62235d2
   border-top: 1px solid #eee;
   display: flex;
   color: white;
@@ -13,8 +36,13 @@ span p h1 {
   padding: 25px;
   background-color: black;
   margin-top: 200px;
+<<<<<<< HEAD
+  font-family: "poppin";
+  height: 200px;
+=======
   height: 250px;
   margin-bottom: 0px;
+>>>>>>> 811a2262568a6338e3699fc7d6be891ed62235d2
 }
 .image__name__footer {
   display: flex;
@@ -22,11 +50,16 @@ span p h1 {
   justify-content: start;
   width: 100%;
 }
+<<<<<<< HEAD
+.name__footer {
+  font-size: 30px;
+=======
 .span__footer__get {
   font-size: 10px;
 }
 .name__footer {
   font-size: 20px;
+>>>>>>> 811a2262568a6338e3699fc7d6be891ed62235d2
 }
 .social__media__footer {
   display: flex;
@@ -56,25 +89,41 @@ span p h1 {
 .contact__us__footer {
   display: flex;
   flex-direction: column;
+<<<<<<< HEAD
+  gap: 20px;
+=======
   gap: 10px;
+>>>>>>> 811a2262568a6338e3699fc7d6be891ed62235d2
   width: 15%;
 }
 .account__footer {
   display: flex;
   flex-direction: column;
+<<<<<<< HEAD
+  gap: 20px;
+=======
   gap: 10px;
+>>>>>>> 811a2262568a6338e3699fc7d6be891ed62235d2
   width: 15%;
 }
 .about__us__footer {
   display: flex;
   flex-direction: column;
+<<<<<<< HEAD
+  gap: 20px;
+=======
   gap: 10px;
+>>>>>>> 811a2262568a6338e3699fc7d6be891ed62235d2
   width: 15%;
 }
 .resources__footer {
   display: flex;
   flex-direction: column;
+<<<<<<< HEAD
+  gap: 20px;
+=======
   gap: 10px;
+>>>>>>> 811a2262568a6338e3699fc7d6be891ed62235d2
   width: 15%;
 }
 .name__footer__container {
@@ -83,6 +132,8 @@ span p h1 {
   gap: 20px;
   height: 70;
 }
+<<<<<<< HEAD
+=======
 .input__footer {
   background-color: black;
   color: white;
@@ -153,3 +204,4 @@ span p h1 {
   align-items: center;
   gap: 0px;
 }
+>>>>>>> 811a2262568a6338e3699fc7d6be891ed62235d2

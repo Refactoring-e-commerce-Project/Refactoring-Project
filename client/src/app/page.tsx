@@ -1,5 +1,5 @@
 "use client";
-import Home from "./homePage/page";
+// import Home from "./homePage/page";
 
 // import FlashSales from "./flashSlaes/page";
 
@@ -11,7 +11,7 @@ function page() {
     <div>
       {/* <Login />
       <SignUp /> */}
-      <Home />
+      {/* <Home /> */}
     </div>
   );
 }

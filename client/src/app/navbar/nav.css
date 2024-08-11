@@ -1,3 +1,38 @@
+<<<<<<< HEAD
+.navbar__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* justify-content: space-between; */
+    font-size: 12px;
+    background-color: black;
+    color: white;
+    height: 50px;
+    gap: 12px;
+    /* margin-bottom: 40px; */
+    position: sticky;
+    top: 0%;
+  }
+  
+  .navbar__shopnow {
+    font-weight: bold;
+    text-decoration: underline;
+    margin-left: 50px;
+    font-size: 13px;
+    color: white;
+  }
+  .navbar__langage {
+    margin-left: 400px;
+    /* left: 10px; */
+    font-size: 13px;
+    color: white;
+  }
+  /* .Hero__container {
+    margin-top: 150px;
+    margin-right: 400px;
+  
+  } */
+=======
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -42,3 +77,4 @@ span {
     margin-right: 400px;
   
   } */
+>>>>>>> 811a2262568a6338e3699fc7d6be891ed62235d2
