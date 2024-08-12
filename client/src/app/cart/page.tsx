@@ -4,6 +4,7 @@ import "./cart.css";
 
 const Cart = () => {
   const [quantity, setquantity] = useState<number>(1);
+  
 
   return (
     <div className="cart">

@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart, faEye } from "@fortawesome/free-solid-svg-icons";
-import "./electronics.css";
+import "./mode.css";
 import axios from "axios";
 
 interface Category {
@@ -24,7 +24,7 @@ interface Electronic {
   Category: Category;
 }
 
-function Electronics() {
+function Mode() {
   const [electronics, setElectronics] = useState<Electronic[]>([]);
 
   useEffect(() => {
@@ -34,7 +34,7 @@ function Electronics() {
         const products = res.data as Electronic[];
 
         const filteredProducts = products.filter(
-          (elec) => elec.Category.categoryName === "electronics"
+          (elec) => elec.Category.categoryName === "mode"
         );
         setElectronics(filteredProducts);
       })
@@ -49,7 +49,7 @@ function Electronics() {
       <div className="header__seller__page" style={{ marginTop: "90px" }}>
         <div className="title__seller__page">
           <div className="red_mark__seller"></div>
-          <span className="space__seller">Electronics</span>
+          <span className="space__seller">Mode</span>
         </div>
       </div>
       <div className="Home__container">
@@ -90,4 +90,4 @@ function Electronics() {
   );
 }
 
-export default Electronics;
+export default Mode;

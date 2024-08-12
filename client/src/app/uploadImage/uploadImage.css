@@ -1,0 +1,251 @@
+.global__container__seller {
+  margin-top: 50px;
+}
+.seller__page__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 40px;
+}
+.red_mark__seller {
+  width: 25px;
+  height: 50px;
+
+  background-color: #db4444;
+}
+.title__seller__page {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 20px;
+}
+.space__seller {
+  font-weight: bold;
+  font-size: 25px;
+}
+.seller__input {
+  border-bottom: 2px solid rgb(232, 228, 228);
+  padding: 8px;
+  font-size: 16px;
+  border-radius: 4px;
+  text-align: center;
+}
+.add__product__text {
+  font-size: 18px;
+  font-weight: bold;
+}
+.header__seller__page {
+  display: flex;
+  justify-content: space-between;
+}
+
+.img__seller {
+  width: 50px;
+  height: auto;
+  border-radius: 50%;
+}
+.category__selection__box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.btn__add__product__seller {
+  background-color: #db4444;
+  color: white;
+  width: 90px;
+}
+.img__container {
+  display: flex;
+  margin-right: 21px;
+}
+.img__container img {
+  width: 60px;
+  height: auto;
+  border-radius: 50%;
+  margin-right: -1.1rem;
+  border: 3px solid #fdf2e9;
+}
+
+.img__container img:last-child {
+  margin: 0;
+}
+
+.item__table__seller {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  background-color: white;
+  margin-top: 40px;
+  margin-right: 160px;
+}
+
+.product__description__seller {
+  font-size: 12px;
+}
+
+/* table css */
+
+.global__container__seller {
+  font-family: Arial, sans-serif;
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 20px;
+}
+
+.header__seller__page {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.space__seller {
+  margin-left: 10px;
+}
+
+.img__container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.img__seller {
+  width: 150px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.seller__page__container {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.add__product__text {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type="text"]::placeholder,
+input[type="number"]::placeholder {
+  color: #aaa;
+}
+
+.cloudinary {
+  background-color: #db4444;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cloudinary:hover {
+  background-color: #ee8383;
+}
+
+.btn__add__product__seller {
+  display: block;
+  width: 100%;
+}
+
+.item__table {
+  margin-top: 20px;
+  text-align: center;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 30px;
+}
+.item {
+  margin-bottom: 20px;
+  font-size: 35px;
+}
+
+.item__search table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.item__search th,
+.item__search td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.item__search th {
+  background-color: #f4f4f4;
+}
+
+.item__img {
+  width: 100px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.product__description__backoffice {
+  max-width: 300px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.btn__add__product__seller {
+  background-color: #b61c21;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 12px 24px;
+
+  font-size: 16px;
+  font-weight: 300;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn__add__product__seller:hover {
+  background-color: #000000;
+  transform: translateY(-2px);
+}
+
+.btn__add__product__seller:active {
+  background-color: #004085;
+  transform: translateY(1px);
+}
+
+.btn__add__product__seller:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.4);
+}
+
+.btn__add__product__seller:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+  opacity: 0.65;
+  box-shadow: none;
+}

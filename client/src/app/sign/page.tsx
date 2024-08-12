@@ -31,9 +31,9 @@ function SignUp() {
         if (response.data.user.type === "client") {
           // line 23 user not users
           localStorage.setItem("token", response.data.token);
-          router.push("/clientHome"); // navigate
+          router.push("/login"); // navigate
         } else {
-          router.push("/seller");
+          router.push("/uploadImage");
           // navigate to seller page
         }
       })
@@ -63,7 +63,7 @@ function SignUp() {
         <input
           placeholder="Email or phone number"
           className="w-70 h-70 border-b-2 border-grey outline-none"
-          onChange={(e:ChangeEvent<HTMLInputElement>) => {
+          onChange={(e: ChangeEvent<HTMLInputElement>) => {
             setmail(e.target.value);
           }}
         />

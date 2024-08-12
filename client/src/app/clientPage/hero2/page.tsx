@@ -1,19 +1,27 @@
-'use client'
+"use client";
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUser, faMagnifyingGlass, faHeart, faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+import {
+  faUser,
+  faMagnifyingGlass,
+  faHeart,
+  faShoppingCart,
+} from "@fortawesome/free-solid-svg-icons";
 import "./hero2.css";
 import { useRouter } from "next/navigation";
 
 function Hero() {
   const router = useRouter();
 
+  // const handleUserHis = () => {
+  //   router.push("/clientPage/productHistory");
+  // };
   const handleLogout = () => {
-    localStorage.clear()
+    localStorage.clear();
     console.log(localStorage);
     router.push("/login");
   };
-  
+
   return (
     <div className="hero__container">
       <div className="hero__exclusive">
@@ -37,15 +45,27 @@ function Hero() {
             type="text"
             placeholder="What are you looking for?"
           />
-          <FontAwesomeIcon className="icon__search__hero" icon={faMagnifyingGlass} />
+          <FontAwesomeIcon
+            className="icon__search__hero"
+            icon={faMagnifyingGlass}
+          />
         </div>
       </div>
 
       <div className="allicon__hero">
         <FontAwesomeIcon className="fa-heart" icon={faHeart} />
-       <a href="/clientPage/cart"> <FontAwesomeIcon className="fa-shopping-cart" icon={faShoppingCart} style={{ fontSize: "16px", color: "black" }} /></a>
-        <div className="user__icon">
-          <FontAwesomeIcon className="icon__user__hero" icon={faUser} /> 
+        <a href="/clientPage/cart">
+          {" "}
+          <FontAwesomeIcon
+            className="fa-shopping-cart"
+            icon={faShoppingCart}
+            style={{ fontSize: "16px", color: "black" }}
+          />
+        </a>
+        <div className="user__icon" >
+        <a href="/productHistory">
+          <FontAwesomeIcon className="icon__user__hero" icon={faUser} />
+        </a>
         </div>
       </div>
     </div>

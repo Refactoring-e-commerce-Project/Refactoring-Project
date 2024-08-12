@@ -43,7 +43,7 @@ function Home() {
  
   useEffect(() => {
     axios
-      .get("http://localhost:3000/products/getAll")
+      .get(`http://localhost:3000/products/getAll`)
       .then((res) => {
         console.log("hhhh5", res);
         setProducts(res.data);

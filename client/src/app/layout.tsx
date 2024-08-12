@@ -5,10 +5,10 @@ import Footer from "./footer/page";
 interface MainlayoutProps {
   children: ReactNode;
 }
-export const metadata={
-  title:'E-commerce',
-  description : 'genereted by next.js'
-}
+export const metadata = {
+  title: "E-commerce",
+  description: "genereted by next.js",
+};
 
 const Mainlayout = ({ children }: MainlayoutProps) => {
   return (
@@ -17,7 +17,6 @@ const Mainlayout = ({ children }: MainlayoutProps) => {
         <Navbar />
         {children}
         {/* <Footer/> */}
-       <h1>123</h1>
       </body>
     </html>
   );

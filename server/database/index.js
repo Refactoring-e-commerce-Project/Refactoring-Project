@@ -24,7 +24,7 @@ const User = sequelize.define(
     },
     mail: {
       type: DataTypes.STRING,
-      unique: true,
+      // unique: true,
       allowNull: false,
     },
     password: {
@@ -141,13 +141,13 @@ const Cart = sequelize.define(
         key: "id",
       },
     },
-    image:{
-      type:DataTypes.STRING,
-      allowNull : false,
+    image: {
+      type: DataTypes.STRING,
+      allowNull: false,
     },
-    price:{
-      type:DataTypes.INTEGER,
-      allowNull:false
+    price: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
     },
     quantity: {
       type: DataTypes.INTEGER,
@@ -212,7 +212,7 @@ const Category = sequelize.define(
     categoryName: {
       type: DataTypes.STRING,
       allowNull: false,
-      unique: true,
+      // unique: true,
     },
   },
   {
@@ -220,8 +220,93 @@ const Category = sequelize.define(
     timestamps: true,
   }
 );
+// added by shady for history paymenet
+const Order = sequelize.define(
+  "Order",
+  {
+    id: {
+      type: DataTypes.INTEGER,
+      autoIncrement: true,
+      primaryKey: true,
+    },
+    userId: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: "users",
+        key: "id",
+      },
+    },
+    totalPrice: {
+      type: DataTypes.FLOAT,
+      defaultValue: 0,
+    },
+  },
+  {
+    tableName: "orders",
+    timestamps: true,
+  }
+);
 
+// added by shady for history paymenet
+const OrderProduct = sequelize.define(
+  "OrderProduct",
+  {
+    id: {
+      type: DataTypes.INTEGER,
+      autoIncrement: true,
+      primaryKey: true,
+    },
+    orderId: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: "orders",
+        key: "id",
+      },
+    },
+    productId: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: "products",
+        key: "id",
+      },
+    },
+    quantity: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      defaultValue: 1,
+      validate: {
+        min: 1,
+      },
+    },
+    price: {
+      type: DataTypes.FLOAT,
+      allowNull: false,
+    },
+    totalPrice: {
+      type: DataTypes.FLOAT,
+      defaultValue: 0,
+    },
+  },
+  {
+    tableName: "order_products",
+    timestamps: true,
+  }
+);
 // Set up associations
+
+User.hasMany(Order, { foreignKey: "userId" });
+Order.belongsTo(User, { foreignKey: "userId" });
+
+// added by shady for history paymenet
+Order.hasMany(OrderProduct, { foreignKey: "orderId" });
+OrderProduct.belongsTo(Order, { foreignKey: "orderId" });
+
+Product.hasMany(OrderProduct, { foreignKey: "productId" });
+OrderProduct.belongsTo(Product, { foreignKey: "productId" });
+
 User.hasMany(Product, { foreignKey: "userId" });
 
 User.hasMany(Wishlist, { foreignKey: "userId" });
@@ -294,4 +379,6 @@ module.exports = {
   Cart,
   Wishlist,
   Category,
+  OrderProduct,
+  Order,
 };

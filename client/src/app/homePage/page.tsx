@@ -18,40 +18,36 @@ import FlashSales from "../flashSlaes/page";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
-
 interface Product {
   id: number;
   productname: string;
   images: string[];
-  description: string; 
+  description: string;
   price: number;
   availability: Boolean;
   userId: number;
   categoryId: number;
   createdAt: string;
   updatedAt: string;
-  Category: number; 
+  Category: number;
 }
 
 function Home() {
   const [products, setProducts] = useState<Product[]>([]);
   const [visibleCount, setVisibleCount] = useState<number>(6);
   const [ref, setref] = useState<Boolean>(false);
-  
+
   const router = useRouter();
 
- 
   useEffect(() => {
     axios
       .get("http://localhost:3000/products/getAll")
       .then((res) => {
         console.log("hhhh5", res);
         setProducts(res.data);
-      
       })
       .catch((err) => {
         console.error(err);
-      
       });
   }, []);
 
@@ -60,19 +56,19 @@ function Home() {
   };
 
   const handleClickElec = () => {
-   
     router.push("/electronics");
-  
   };
   const handleClickBeauty = () => {
-    // navigate("/Beauty");
+    router.push("/beauty");
   };
   const handleClickSports = () => {
-    // navigate("/sports");
+    router.push("/sports");
   };
+  
   const handleClickMode = () => {
-    // navigate("/mode");
+    router.push("/mode");
   };
+  
 
   return (
     <div>

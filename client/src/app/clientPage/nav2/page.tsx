@@ -32,7 +32,7 @@ function NavBar() {
         {/* <p className="navbar__langage">{userNameLogged}</p> */}
 
         <div style={{ fontSize: "12px", color: "white" }}>
-          <FontAwesomeIcon icon={faChevronDown} />
+          <FontAwesomeIcon icon={faChevronDown}   />
         </div>
       </div>
       <Hero />

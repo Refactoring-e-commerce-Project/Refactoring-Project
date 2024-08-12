@@ -1,0 +1,51 @@
+/* ProductHistory.css */
+.product__history__container {
+  margin: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.main-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.main-table th,
+.main-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.main-table th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+}
+
+.products-container {
+  display: flex;
+  flex-wrap: wrap;  /* Wraps products to the next line if needed */
+  gap: 10px;        /* Space between product cards */
+  flex-direction: column;
+}
+
+.product-card2 {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 10px;
+  text-align: center;
+  width: 400px;     /* Adjust the width as needed */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+}
+
+
+
+.product-image {
+  width: 100px;
+  height: auto;
+  margin-bottom: 5px;
+}
