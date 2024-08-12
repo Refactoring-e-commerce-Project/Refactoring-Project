@@ -31,7 +31,7 @@ function SignUp() {
         if (response.data.user.type === "client") {
           // line 23 user not users
           localStorage.setItem("token", response.data.token);
-          router.push("/clientHome"); // navigate
+          router.push("/clientPage/clientHomePage");
         } else {
           router.push("/seller");
           // navigate to seller page
@@ -67,10 +67,11 @@ function SignUp() {
             setmail(e.target.value);
           }}
         />
-        client
-        <input type="checkbox" checked={usercheck} onChange={changeCheckbox} />
-        seller
+        Client :
+        <input style={{marginTop:'-38px'}} type="checkbox" checked={usercheck} onChange={changeCheckbox} />
+        Seller :
         <input
+        style={{marginTop:'-38px'}}
           type="checkbox"
           checked={sellercheck}
           onChange={changeCheckbox}

@@ -115,8 +115,42 @@ const Product = sequelize.define(
     timestamps: true,
   }
 );
+const Payment = sequelize.define(
+  "Payment",
+  {
+    id: {
+      type: DataTypes.INTEGER,
+      autoIncrement: true,
+      primaryKey: true,
+    },
+    userId: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: "users",
+        key: "id",
+      },
+    },
+    stripePaymentIntentId: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    amount: {
+      type: DataTypes.FLOAT,
+      allowNull: false,
+    },
+    status: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      defaultValue: 'pending',
+    },
+  },
+  {
+    tableName: "payments",
+    timestamps: true,
+  }
+);
 
-// Define the Cart model
 const Cart = sequelize.define(
   "Cart",
   {
@@ -141,13 +175,13 @@ const Cart = sequelize.define(
         key: "id",
       },
     },
-    image:{
-      type:DataTypes.STRING,
-      allowNull : false,
+    image: {
+      type: DataTypes.STRING,
+      allowNull: false,
     },
-    price:{
-      type:DataTypes.INTEGER,
-      allowNull:false
+    price: {
+      type: DataTypes.FLOAT,
+      allowNull: false,
     },
     quantity: {
       type: DataTypes.INTEGER,
@@ -161,12 +195,71 @@ const Cart = sequelize.define(
       type: DataTypes.FLOAT,
       defaultValue: 0,
     },
+    paymentId: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: "payments",
+        key: "id",
+      },
+      allowNull: true,
+    },
   },
   {
     tableName: "carts",
     timestamps: true,
   }
 );
+// Define the Cart model
+// const Cart = sequelize.define(
+//   "Cart",
+//   {
+//     id: {
+//       type: DataTypes.INTEGER,
+//       autoIncrement: true,
+//       primaryKey: true,
+//     },
+//     userId: {
+//       type: DataTypes.INTEGER,
+//       allowNull: false,
+//       references: {
+//         model: "users",
+//         key: "id",
+//       },
+//     },
+//     productId: {
+//       type: DataTypes.INTEGER,
+//       allowNull: false,
+//       references: {
+//         model: "products",
+//         key: "id",
+//       },
+//     },
+//     image:{
+//       type:DataTypes.STRING,
+//       allowNull : false,
+//     },
+//     price:{
+//       type:DataTypes.INTEGER,
+//       allowNull:false
+//     },
+//     quantity: {
+//       type: DataTypes.INTEGER,
+//       allowNull: false,
+//       defaultValue: 1,
+//       validate: {
+//         min: 1,
+//       },
+//     },
+//     totalPrice: {
+//       type: DataTypes.FLOAT,
+//       defaultValue: 0,
+//     },
+//   },
+//   {
+//     tableName: "carts",
+//     timestamps: true,
+//   }
+// );
 
 // Define the Wishlist model
 const Wishlist = sequelize.define(
@@ -238,6 +331,12 @@ Cart.belongsTo(Product, { foreignKey: "productId" });
 Wishlist.belongsTo(User, { foreignKey: "userId" });
 Wishlist.belongsTo(Product, { foreignKey: "productId" });
 
+User.hasMany(Payment, { foreignKey: "userId" });
+Payment.belongsTo(User, { foreignKey: "userId" });
+
+Payment.hasMany(Cart, { foreignKey: "paymentId" });
+Cart.belongsTo(Payment, { foreignKey: "paymentId" });
+
 // Authenticate and synchronize the database
 sequelize
   .authenticate()
@@ -294,4 +393,5 @@ module.exports = {
   Cart,
   Wishlist,
   Category,
+  Payment
 };

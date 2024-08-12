@@ -24,12 +24,13 @@ const addwhitelist = async (req, res) => {
 
 // view all fav items 
 const getwishlist = async (req, res) => {
+    const { userId } = req.params; // Extract userId from route parameters
+    
     try {
-        
-        const favlist = await Wishlist.findAll();
+        const favlist = await Wishlist.findAll({ where: { userId } });
 
         if (favlist.length === 0) {
-            return res.status(404).json({ message: 'No wishlist found' });
+            return res.status(404).json({ message: 'No wishlist found for this user' });
         }
 
         res.status(200).json({ favlist });
@@ -38,6 +39,7 @@ const getwishlist = async (req, res) => {
         res.status(500).json({ message: 'Internal server error' });
     }
 };
+
 
 // delete wishlist
 const deletewishlist = async (req, res) => {

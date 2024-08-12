@@ -19,6 +19,10 @@ import FlashSales from "../flashSales2/page"
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import Link from "next/link"
+import NavBar from "../nav2/page";
+import { useCart } from '../context'; // Adjust path as needed
+import Swal from 'sweetalert2'
+
 
 interface Product {
   id: number;
@@ -34,12 +38,17 @@ interface Product {
   Category: number; // Assuming category is nested
 }
 
-function Home() {
+const Home : React.FC =()=> {
   const [products, setProducts] = useState<Product[]>([]);
   const [visibleCount, setVisibleCount] = useState<number>(6);
   const [ref, setref] = useState<Boolean>(false);
   const router = useRouter();
+  const { setCartLength } = useCart();
+  const userId: number = JSON.parse(localStorage.getItem('user') || '{}').id;
 
+  
+
+  
  
   useEffect(() => {
     axios
@@ -80,6 +89,24 @@ const handleClickMode = () => {
   const id: number = JSON.parse(localStorage.getItem("user") || '{}').id;
 
   console.log(id);
+
+  
+  const updateCartLength = () => {
+    const id: number = JSON.parse(localStorage.getItem('user') || '{}').id;
+    axios.get(`http://localhost:3000/carts/getcartbyuser/${id}`)
+      .then((res) => {
+        const newCartLength = res.data.length;
+        setCartLength(newCartLength); // Update context
+        Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: "Item Added Successfully",
+          showConfirmButton: false,
+          timer: 1500
+        });
+      })
+      .catch((err) => console.error('Error fetching cart length:', err));
+  };
   
  
   const handleclickproduct = (imageUrl: string, price: number,prodid : number, quantity: number) => {
@@ -95,15 +122,33 @@ const handleClickMode = () => {
     axios.post('http://localhost:3000/carts/add', newCart)
       .then(() => {
         console.log('Cart added successfully');
+        setref(!ref)
+        updateCartLength()
       })
       .catch((err) => {
         console.error('Error adding cart:', err);
       });
   };
-  
+  const handleheartclick =(id:number,name:string)=>{
+    const obj = {userId:userId , productId:id , prodname:name}
+    axios.post(`http://localhost:3000/wishlist/addwhishlist/`,obj)
+    .then(()=>{
+        Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: "Item liked Successfully",
+            showConfirmButton: false,
+            timer: 1500
+          });
+    }).catch((err)=>{console.log(err);
+    })
+}
+
  
   return (
     <div>
+     <div style={{display:"none"}}>
+      <NavBar   /></div> 
       <div>
         <Exclusive />
         <hr />
@@ -138,6 +183,7 @@ const handleClickMode = () => {
           {/* 3nd icon */}
           <div className="icon__home__container" onClick={handleClickBeauty}>
             <FontAwesomeIcon
+            
               icon={faHeart}
               className="icon-with-border icon__beauty"
             />
@@ -162,16 +208,22 @@ const handleClickMode = () => {
 
       <div className="Home__container">
         {products.slice(0, visibleCount).map((product, index) => (
-          <Link href={`/clientPage/clientHomePage/${product.id}`}>
+          // <Link href={`/clientPage/clientHomePage/${product.id}`}>
           <div key={index} className="second__sales__container">
             <div className="icon__sales ">
               <div className="image__pourcentage__sales">
                 <div className="poucentage__sales">-40%</div>
-                <img className="img__sales" src={product.images[0]} />
+                <img style={{marginLeft:'-3%'}} className="img__sales" src={product.images[0]} />
 
                 <div className="icons">
-                  <FontAwesomeIcon icon={faHeart} className=" icon__heart " />
+                {/* <Link href={`/clientPage/clientHomePage/${product.id}`}> */}
+                  <FontAwesomeIcon style={{cursor:'pointer'}} onClick={()=>handleheartclick(product.id,product.productname)} icon={faHeart} className=" icon__heart " />
+                  {/* </Link> */}
+                  <Link href={`/clientPage/clientHomePage/${product.id}`}>
+
                   <FontAwesomeIcon icon={faEye} className="icon__eye" />
+                  </Link>
+
                 </div>
               </div>
             </div>
@@ -187,7 +239,7 @@ const handleClickMode = () => {
               <button className="btn__home" onClick={() => handleclickproduct(product.images[0], product.price,product.id, 1)} >Add to Cart</button>
             </div>
           </div>
-          </Link>
+          // </Link>
         ))}
       </div>
       {products.length > visibleCount && (

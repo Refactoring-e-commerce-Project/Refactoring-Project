@@ -85,7 +85,7 @@ const About = () => {
 
 
       <section className="team">
-
+{/* 
         <div className="team-member">
           <img src='{img1}' alt="Tom Cruise" />
           <h3>Tom Cruise</h3>
@@ -104,12 +104,12 @@ const About = () => {
 
 
 
-        </div>
+        </div> */}
 
 
 
         <div className="team-member">
-          <img src='{img2}' alt="Emma Watson" />
+          <img src='https://img.freepik.com/premium-photo/portrait-successful-businessman-ceo-happy-smiling-employee-modern-office-high-quality-photo_371428-2405.jpg' alt="Emma Watson" />
           <h3>Emma Watson</h3>
           <p>Managing Director</p>
           <div className="social-media-icons">
@@ -128,7 +128,7 @@ const About = () => {
 
 
         <div className="team-member">
-          <img src='{img3' alt="Will Smith" />
+          <img src='https://media.istockphoto.com/id/1413766112/photo/successful-mature-businessman-looking-at-camera-with-confidence.jpg?s=612x612&w=0&k=20&c=NJSugBzNuZqb7DJ8ZgLfYKb3qPr2EJMvKZ21Sj5Sfq4=' alt="Will Smith" />
           <h3>Will Smith</h3>
           <p>Product Designer</p>
 

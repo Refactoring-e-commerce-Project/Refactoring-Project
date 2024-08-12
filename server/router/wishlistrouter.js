@@ -5,7 +5,7 @@ const wishlistcontroller = require('../controller/wishlist')
 
 
 router.post('/addwhishlist', wishlistcontroller.addwhitelist)
-router.get('/getwhishlist', wishlistcontroller.getwishlist)
+router.get('/getwhishlist/:userId', wishlistcontroller.getwishlist)
 router.delete('/deletewishlist', wishlistcontroller.deletewishlist)
 
 

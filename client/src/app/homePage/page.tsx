@@ -135,7 +135,7 @@ function Home() {
       <div className="Home__container">
         {products.slice(0, visibleCount).map((product, index) => (
           // link place
-          <div key={index} className="second__sales__container">
+          <div key={index} className="second__sales__container" onClick={()=>{router.push("/sign/")}}>
             <div className="icon__sales ">
               <div className="image__pourcentage__sales">
                 <div className="poucentage__sales">-40%</div>
@@ -156,7 +156,7 @@ function Home() {
                 <span className="star">⭐⭐⭐⭐</span>
                 <p className="grey__star">⭐</p>
               </div>
-              <button className="btn__home">Add to Cart</button>
+              <button className="btn__home" >Add to Cart</button>
             </div>
           </div>
           // End link
